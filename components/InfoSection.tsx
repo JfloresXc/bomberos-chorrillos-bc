@@ -52,11 +52,6 @@ const InfoSection: React.FC = () => {
                     <p className="text-center text-brand-text-secondary mb-12 max-w-2xl mx-auto">Los bomberos voluntarios de Chorrillos desempeñan una labor fundamental en la protección y seguridad de la comunidad, trabajando incansablemente para prevenir y atender emergencias de diversos tipos, como incendios, accidentes vehiculares y desastres naturales. Este cuerpo de bomberos, que opera bajo el principio del voluntariado, está compuesto por hombres y mujeres que dedican su tiempo, esfuerzo y recursos personales para brindar un servicio esencial sin recibir remuneración económica.</p>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         <ServiceCard 
-                            icon={<FireTruckIcon className="h-12 w-12" />}
-                            title="Respuesta a Emergencias"
-                            description="Atención inmediata a incendios, accidentes de tráfico y otras situaciones de riesgo."
-                        />
-                        <ServiceCard 
                             icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" viewBox="0 0 20 20" fill="currentColor"><path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 011.085.12L10 11.854l3.665-3.683a1 1 0 011.085-.12L17 7.081a1 1 0 000-1.84l-7-3zM15 9.421l-5 5-5-5v3.579l5 5 5-5V9.42z" /></svg>}
                             title="Educación y Prevención"
                             description="Programas de formación en escuelas y empresas para concienciar sobre la seguridad."
