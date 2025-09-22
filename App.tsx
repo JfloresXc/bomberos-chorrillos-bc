@@ -6,6 +6,7 @@ import VolunteerStories from './components/VolunteerStories';
 import VideoSection from './components/VideoSection';
 import CallToAction from './components/CallToAction';
 import Footer from './components/Footer';
+import EmergencyButton from './components/EmergencyButton';
 
 const App: React.FC = () => {
   return (
@@ -19,6 +20,7 @@ const App: React.FC = () => {
         <CallToAction />
       </main>
       <Footer />
+      <EmergencyButton />
     </div>
   );
 };

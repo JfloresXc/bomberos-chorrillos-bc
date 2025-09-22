@@ -49,21 +49,16 @@ const InfoSection: React.FC = () => {
                 <section id="servicios" className="mb-20">
                     <h2 className="text-4xl font-black font-heading text-center mb-2 uppercase text-brand-text-primary">Los servicios que prestan</h2>
                     <p className="text-center text-brand-text-secondary mb-12 max-w-2xl mx-auto">Más allá de apagar incendios, estamos aquí para proteger, educar y servir a nuestra comunidad en múltiples facetas.</p>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <ServiceCard 
-                            icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" /></svg>}
-                            title="Respuesta a Emergencias"
-                            description="Atención inmediata a incendios, accidentes de tráfico y otras situaciones de riesgo."
-                        />
+                    <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                         <ServiceCard 
                             icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" viewBox="0 0 20 20" fill="currentColor"><path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 011.085.12L10 11.854l3.665-3.683a1 1 0 011.085-.12L17 7.081a1 1 0 000-1.84l-7-3zM15 9.421l-5 5-5-5v3.579l5 5 5-5V9.42z" /></svg>}
                             title="Educación y Prevención"
-                            description="Programas de formación en escuelas y empresas para concienciar sobre la seguridad."
+                            description="Ofrecemos charlas y material educativo accesible para escuelas, empresas y la comunidad, promoviendo una cultura de prevención."
                         />
                          <ServiceCard 
                             icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clipRule="evenodd" /></svg>}
                             title="Asistencia Médica"
-                            description="Primeros auxilios y soporte vital básico en emergencias médicas hasta la llegada de la ambulancia."
+                            description="Brindamos primeros auxilios. Aprende a actuar ante riesgos comunes y qué hacer mientras esperas a los servicios médicos de emergencia."
                         />
                     </div>
                 </section>

@@ -17,6 +17,21 @@ const Header: React.FC = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+  
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.substring(1);
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+        const yOffset = -80; // Offset for the sticky header
+        const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+    }
+  };
+
 
   const navLinks = [
     { href: '#servicios', text: 'Servicios' },
@@ -31,12 +46,16 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between">
           <a href="#" className="flex items-center space-x-2">
             <FireIcon className="h-8 w-8 text-brand-red" />
-            <span className="text-xl font-bold font-heading uppercase text-brand-dark">Bomberos Chorrillos</span>
+            <span className="text-xl font-bold font-heading uppercase text-brand-dark">Bomberos Garibaldi 6</span>
           </a>
           
           <div className="hidden md:flex items-center space-x-6">
             {navLinks.map(link => (
-              <a key={link.href} href={link.href} className="text-brand-text-primary hover:text-brand-red transition-colors duration-300 font-medium">
+              <a 
+                key={link.href} 
+                href={link.href} 
+                onClick={(e) => handleNavClick(e, link.href)}
+                className="text-brand-text-primary hover:text-brand-red transition-colors duration-300 font-medium cursor-pointer">
                 {link.text}
               </a>
             ))}
@@ -56,7 +75,11 @@ const Header: React.FC = () => {
             <ul className="flex flex-col space-y-4">
               {navLinks.map(link => (
                  <li key={link.href}>
-                  <a href={link.href} className="block text-brand-text-primary hover:text-brand-red transition-colors duration-300 font-medium" onClick={() => setIsMenuOpen(false)}>
+                  <a 
+                    href={link.href} 
+                    className="block text-brand-text-primary hover:text-brand-red transition-colors duration-300 font-medium cursor-pointer" 
+                    onClick={(e) => handleNavClick(e, link.href)}
+                  >
                     {link.text}
                   </a>
                 </li>

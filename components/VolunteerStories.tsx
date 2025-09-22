@@ -17,24 +17,35 @@ const TestimonialCard: React.FC<{ imgSrc: string; quote: string; name: string; r
 const VolunteerStories: React.FC = () => {
     const volunteers = [
         {
-            imgSrc: 'https://images.unsplash.com/photo-1579044798547-5d54e4a770e0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGZpcmVmaWdodGVyJTIwcG9ydHJhaXR8ZW58MHx8MHx8fDA%3D',
+            imgSrc: 'https://images.unsplash.com/photo-1572021335469-31706a17aaef?q=80&w=256&h=256&auto=format&fit=crop',
             quote: 'Ser voluntario me ha enseñado el verdadero significado de la comunidad. Cada día es una oportunidad para marcar una diferencia real en la vida de alguien.',
             name: 'Alberto Falconi',
             role: 'Voluntario de Rescate'
         },
         {
-            imgSrc: 'https://images.unsplash.com/photo-1627843563931-a28a329d4b68?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZmlyZWZpZ2h0ZXIlMjBwb3J0cmFpdHxlbnwwfHwwfHx8MA%3D%3D',
+            imgSrc: 'https://images.unsplash.com/photo-1627437599432-9015055053de?q=80&w=256&h=256&auto=format&fit=crop',
             quote: 'La adrenalina es increíble, pero la gratitud en los ojos de las personas a las que ayudamos es la recompensa más grande. Es un honor servir.',
             name: 'Ana Lucía Torres',
             role: 'Paramédica Voluntaria'
         },
         {
-            imgSrc: 'https://images.unsplash.com/photo-1591122785933-8c5f5a2e5d84?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZmlyZWZpZ2h0ZXIlMjBwb3J0cmFpdHxlbnwwfHwwfHx8MA%3D%3D',
+            imgSrc: 'https://images.unsplash.com/photo-1557053964-937650b63311?q=80&w=256&h=256&auto=format&fit=crop',
             quote: 'Aquí no solo encontré un equipo, encontré una familia. Nos apoyamos mutuamente en los momentos más difíciles y celebramos cada vida salvada.',
             name: 'Javier Mendoza',
             role: 'Jefe de Brigada Voluntaria'
         }
     ];
+
+    const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        e.preventDefault();
+        const targetId = href.substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            const yOffset = -80; // Offset for the sticky header
+            const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+    };
 
     return (
         <section className="py-20 bg-brand-background">
@@ -55,7 +66,8 @@ const VolunteerStories: React.FC = () => {
                     </p>
                     <a 
                         href="#colaborar" 
-                        className="inline-block bg-brand-red hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg transform hover:scale-105 transition-all duration-300 text-lg"
+                        onClick={(e) => handleNavClick(e, '#colaborar')}
+                        className="inline-block bg-brand-red hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg transform hover:scale-105 transition-all duration-300 text-lg cursor-pointer"
                     >
                         Conviértete en Voluntario
                     </a>
