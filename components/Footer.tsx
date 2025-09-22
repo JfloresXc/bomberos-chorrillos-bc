@@ -50,7 +50,7 @@ const Footer: React.FC = () => {
                         <h4 className="font-bold font-heading text-lg mb-4 text-white uppercase">Enlaces Rápidos</h4>
                         <ul>
                             <li className="mb-2"><a href="#servicios" onClick={(e) => handleNavClick(e, '#servicios')} className="text-gray-400 hover:text-brand-red transition-colors cursor-pointer">Servicios</a></li>
-                            <li className="mb-2"><a href="#seguridad" onClick={(e) => handleNavClick(e, '#seguridad')} className="text-gray-400 hover:text-brand-red transition-colors cursor-pointer">Consejos</a></li>
+                            <li className="mb-2"><a href="#nosotros" onClick={(e) => handleNavClick(e, '#nosotros')} className="text-gray-400 hover:text-brand-red transition-colors cursor-pointer">Nosotros</a></li>
                             <li className="mb-2"><a href="#colaborar" onClick={(e) => handleNavClick(e, '#colaborar')} className="text-gray-400 hover:text-brand-red transition-colors cursor-pointer">Colaborar</a></li>
                             <li className="mb-2"><a href="#contacto" onClick={(e) => handleNavClick(e, '#contacto')} className="text-gray-400 hover:text-brand-red transition-colors cursor-pointer">Contacto</a></li>
                         </ul>

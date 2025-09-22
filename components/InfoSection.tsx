@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FireTruckIcon } from './icons/EmergencyIcons';
 
 const ServiceCard: React.FC<{ icon: JSX.Element; title: string; description: string }> = ({ icon, title, description }) => (
   <div className="bg-white p-6 rounded-lg text-center transform hover:-translate-y-2 border border-gray-200 hover:shadow-2xl hover:shadow-brand-red/20 transition-all duration-300">
@@ -35,10 +36,10 @@ const InfoSection: React.FC = () => {
         setOpenAccordion(openAccordion === index ? null : index);
     };
 
-    const safetyTips = [
-        { id: 1, title: "Seguridad en el Hogar", content: "Instala detectores de humo y revisa sus baterías cada seis meses. Ten un extintor de incendios accesible y sabe cómo usarlo. No sobrecargues los enchufes eléctricos." },
-        { id: 2, title: "Prevención de Incendios Forestales", content: "Nunca dejes fogatas desatendidas. Despeja la vegetación seca alrededor de tu casa. Respeta las prohibiciones de quema locales." },
-        { id: 3, title: "Actuación durante un Incendio", content: "Mantén la calma y evacúa inmediatamente. Cierra las puertas a tu paso para contener el fuego. Si hay humo, agáchate y gatea. Llama a emergencias desde un lugar seguro." },
+    const associationGoals = [
+        { id: 1, title: "Mejorar los recursos y equipos disponibles", content: "La asociación busca proporcionar a los bomberos voluntarios de Chorrillos equipos de protección personal, vehículos adecuados y tecnología avanzada para que puedan responder de manera más efectiva a emergencias. Mejorar estos recursos les permitirá reducir los riesgos y aumentar su capacidad de actuación ante cualquier tipo de desastre." },
+        { id: 2, title: "Fortalecer la capacitación y formación", content: "La asociación tiene como objetivo organizar programas de capacitación continua para los bomberos voluntarios, asegurando que estén siempre preparados para enfrentar las situaciones más complejas. Esta formación abarca desde primeros auxilios hasta técnicas avanzadas de rescate, lo cual es crucial para mantener la seguridad y eficacia del cuerpo de bomberos." },
+        { id: 3, title: "Fomentar la integración y el apoyo comunitario", content: "La asociación quiere promover un lazo más fuerte entre los bomberos y la comunidad de Chorrillos, fomentando el trabajo conjunto en proyectos de prevención de incendios y desastres naturales. Además, busca sensibilizar a la población sobre la importancia del rol de los bomberos voluntarios, generando un sentido de solidaridad y apoyo constante." },
     ];
 
     return (
@@ -48,34 +49,39 @@ const InfoSection: React.FC = () => {
                 {/* Section Servicios */}
                 <section id="servicios" className="mb-20">
                     <h2 className="text-4xl font-black font-heading text-center mb-2 uppercase text-brand-text-primary">Los servicios que prestan</h2>
-                    <p className="text-center text-brand-text-secondary mb-12 max-w-2xl mx-auto">Más allá de apagar incendios, estamos aquí para proteger, educar y servir a nuestra comunidad en múltiples facetas.</p>
-                    <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <p className="text-center text-brand-text-secondary mb-12 max-w-2xl mx-auto">Los bomberos voluntarios de Chorrillos desempeñan una labor fundamental en la protección y seguridad de la comunidad, trabajando incansablemente para prevenir y atender emergencias de diversos tipos, como incendios, accidentes vehiculares y desastres naturales. Este cuerpo de bomberos, que opera bajo el principio del voluntariado, está compuesto por hombres y mujeres que dedican su tiempo, esfuerzo y recursos personales para brindar un servicio esencial sin recibir remuneración económica.</p>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <ServiceCard 
+                            icon={<FireTruckIcon className="h-12 w-12" />}
+                            title="Respuesta a Emergencias"
+                            description="Atención inmediata a incendios, accidentes de tráfico y otras situaciones de riesgo."
+                        />
                         <ServiceCard 
                             icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" viewBox="0 0 20 20" fill="currentColor"><path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 011.085.12L10 11.854l3.665-3.683a1 1 0 011.085-.12L17 7.081a1 1 0 000-1.84l-7-3zM15 9.421l-5 5-5-5v3.579l5 5 5-5V9.42z" /></svg>}
                             title="Educación y Prevención"
-                            description="Ofrecemos charlas y material educativo accesible para escuelas, empresas y la comunidad, promoviendo una cultura de prevención."
+                            description="Programas de formación en escuelas y empresas para concienciar sobre la seguridad."
                         />
                          <ServiceCard 
                             icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clipRule="evenodd" /></svg>}
                             title="Asistencia Médica"
-                            description="Brindamos primeros auxilios. Aprende a actuar ante riesgos comunes y qué hacer mientras esperas a los servicios médicos de emergencia."
+                            description="Primeros auxilios y soporte vital básico en emergencias médicas hasta la llegada de la ambulancia."
                         />
                     </div>
                 </section>
                 
-                {/* Section Consejos de Seguridad */}
-                <section id="seguridad">
-                    <h2 className="text-4xl font-black font-heading text-center mb-2 uppercase text-brand-text-primary">Consejos de Seguridad</h2>
-                    <p className="text-center text-brand-text-secondary mb-12 max-w-2xl mx-auto">Unos pocos minutos de prevención pueden salvar vidas. Aprende a proteger a tu familia y tu hogar.</p>
+                {/* Section ¿Quiénes somos? */}
+                <section id="nosotros">
+                    <h2 className="text-4xl font-black font-heading text-center mb-2 uppercase text-brand-text-primary">¿Quiénes somos?</h2>
+                    <p className="text-center text-brand-text-secondary mb-12 max-w-2xl mx-auto">Somos una asociación de voluntarios comprometidos con la misión de apoyar y fortalecer la labor de los bomberos voluntarios, quienes día a día arriesgan sus vidas para proteger a la comunidad. A través de nuestras acciones, buscamos proporcionarles los recursos, capacitación y apoyo logístico que necesitan para cumplir con su valiosa labor de manera efectiva. Nuestro objetivo es crear un lazo de solidaridad y cooperación, generando un espacio en el que podamos contribuir con donaciones, voluntariado y actividades que fortalezcan tanto la infraestructura como la moral de estos valientes. Como parte de esta red de apoyo, trabajamos unidos con los bomberos para mejorar sus condiciones y asegurar que su dedicación al servicio de la comunidad continúe siendo un ejemplo de altruismo y valentía..</p>
                     <div className="max-w-3xl mx-auto bg-white rounded-lg border border-gray-200 shadow-sm">
-                       {safetyTips.map(tip => (
+                       {associationGoals.map(goal => (
                            <AccordionItem 
-                                key={tip.id}
-                                title={tip.title}
-                                isOpen={openAccordion === tip.id}
-                                onClick={() => toggleAccordion(tip.id)}
+                                key={goal.id}
+                                title={goal.title}
+                                isOpen={openAccordion === goal.id}
+                                onClick={() => toggleAccordion(goal.id)}
                            >
-                               {tip.content}
+                               {goal.content}
                            </AccordionItem>
                        ))}
                     </div>
