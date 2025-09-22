@@ -3,13 +3,13 @@ import React from 'react';
 const VideoSection: React.FC = () => {
   return (
     <section className="py-20 bg-brand-background">
-      <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-black font-heading text-center mb-2 uppercase text-brand-text-primary">Conoce su trabajo</h2>
-        <p className="text-center text-brand-text-secondary mb-12 max-w-2xl mx-auto">
+      <div className="container mx-auto md:px-6">
+        <h2 className="text-4xl font-black font-heading text-center mb-2 uppercase text-brand-text-primary px-6 md:px-0">Conoce su trabajo</h2>
+        <p className="text-center text-brand-text-secondary mb-12 max-w-2xl mx-auto px-6 md:px-0">
           Un vistazo a su día a día, la importancia del entrenamiento y testimonios de la comunidad.
         </p>
         <div className="max-w-4xl mx-auto">
-          <div className="aspect-video rounded-lg overflow-hidden shadow-2xl shadow-brand-red/20 min-h-[300px] md:min-h-[400px]">
+          <div className="aspect-video md:rounded-lg overflow-hidden shadow-2xl shadow-brand-red/20 min-h-[300px] md:min-h-[400px]">
             <iframe 
               src="https://www.youtube.com/embed/raYu5lP7BFM" 
               title="YouTube video player" 
