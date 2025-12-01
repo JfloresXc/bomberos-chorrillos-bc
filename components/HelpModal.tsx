@@ -10,6 +10,7 @@ interface ProductMedia {
   id: string;
   alt: string;
   url: string;
+  price: number;
   [key: string]: any;
 }
 
@@ -34,7 +35,11 @@ const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
                 .then((res) => res.json())
                 .then((data) => {
                     if (data && data.docs) {
-                        setProducts(data.docs);
+                        const productsWithPrices = data.docs.map((doc: any) => ({
+                            ...doc,
+                            price: Math.floor(Math.random() * (100 - 20 + 1)) + 20
+                        }));
+                        setProducts(productsWithPrices);
                     }
                 })
                 .catch((err) => console.error('Error loading products:', err))
@@ -89,6 +94,7 @@ const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
                                         />
                                     </div>
                                     <span className="text-brand-text-primary font-bold text-sm md:text-base capitalize leading-tight">{product.alt}</span>
+                                    <span className="text-brand-red font-bold text-lg mt-2">S/ {product.price}.00</span>
                                 </div>
                             ))}
                         </div>
