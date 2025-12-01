@@ -1,5 +1,5 @@
+
 import React, { useEffect } from 'react';
-import { CapIcon, KeychainIcon, PenIcon, ShirtIcon, WaterBottleIcon } from './icons/ProductIcons';
 
 interface HelpModalProps {
   isOpen: boolean;
@@ -7,11 +7,12 @@ interface HelpModalProps {
 }
 
 const products = [
-    { name: 'Polos', icon: <ShirtIcon /> },
-    { name: 'Gorras', icon: <CapIcon /> },
-    { name: 'Llaveros', icon: <KeychainIcon /> },
-    { name: 'Tomatodos', icon: <WaterBottleIcon /> },
-    { name: 'Lapiceros', icon: <PenIcon /> },
+    { name: 'Polos', image: 'https://github.com/JfloresXc/bomberos-chorrillos-bc/blob/main/assets/a.jpeg' },
+    { name: 'Gorras', image:'https://github.com/JfloresXc/bomberos-chorrillos-bc/blob/main/assets/a.jpeg' },
+    { name: 'Llaveros', image:'https://github.com/JfloresXc/bomberos-chorrillos-bc/blob/main/assets/a.jpeg' },
+    { name: 'Tomatodos', image:'https://github.com/JfloresXc/bomberos-chorrillos-bc/blob/main/assets/a.jpeg' },
+    { name: 'Lapiceros', image:'https://github.com/JfloresXc/bomberos-chorrillos-bc/blob/main/assets/a.jpeg' },
+    { name: 'Parches', image:'https://github.com/JfloresXc/bomberos-chorrillos-bc/blob/main/assets/a.jpeg' },
 ];
 
 const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
@@ -36,7 +37,7 @@ const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
             aria-modal="true"
         >
             <div 
-                className="bg-white rounded-lg shadow-2xl w-full max-w-2xl transform transition-all duration-300 scale-95 opacity-0 animate-fade-in-up"
+                className="bg-white rounded-lg shadow-2xl w-full max-w-3xl transform transition-all duration-300 scale-95 opacity-0 animate-fade-in-up"
                 style={{ animationFillMode: 'forwards' }}
                 onClick={(e) => e.stopPropagation()}
             >
@@ -54,11 +55,17 @@ const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
                         Adquiere nuestros productos oficiales. Cada compra es una contribución directa para mejorar nuestro equipamiento y entrenamiento.
                     </p>
                     
-                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 text-center mb-10">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 text-center mb-10">
                         {products.map(product => (
-                            <div key={product.name} className="flex flex-col items-center p-4 bg-gray-100 rounded-lg hover:bg-brand-red/10 border border-transparent hover:border-brand-red/30 transition-all duration-300">
-                                <div className="text-brand-red mb-3">{product.icon}</div>
-                                <span className="text-brand-text-primary font-medium">{product.name}</span>
+                            <div key={product.name} className="flex flex-col items-center p-4 bg-gray-100 rounded-lg hover:bg-brand-red/10 border border-transparent hover:border-brand-red/30 transition-all duration-300 group">
+                                <div className="w-32 h-32 mb-3 flex items-center justify-center bg-white rounded-md p-2 shadow-sm">
+                                    <img 
+                                        src={product.image} 
+                                        alt={product.name} 
+                                        className="max-w-full max-h-full object-contain transform group-hover:scale-105 transition-transform duration-300"
+                                    />
+                                </div>
+                                <span className="text-brand-text-primary font-bold text-lg">{product.name}</span>
                             </div>
                         ))}
                     </div>
