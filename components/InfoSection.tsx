@@ -1,7 +1,8 @@
+
 import React, { useState } from 'react';
 import { FireTruckIcon } from './icons/EmergencyIcons';
 
-const ServiceCard: React.FC<{ icon: JSX.Element; title: string; description: string }> = ({ icon, title, description }) => (
+const ServiceCard: React.FC<{ icon: React.ReactNode; title: string; description: string }> = ({ icon, title, description }) => (
   <div className="bg-white p-6 rounded-lg text-center transform hover:-translate-y-2 border border-gray-200 hover:shadow-2xl hover:shadow-brand-red/20 transition-all duration-300">
     <div className="flex justify-center mb-4 text-brand-red">{icon}</div>
     <h3 className="text-xl font-bold font-heading mb-2 text-brand-text-primary">{title}</h3>
@@ -67,7 +68,23 @@ const InfoSection: React.FC = () => {
                 {/* Section ¿Quiénes somos? */}
                 <section id="nosotros">
                     <h2 className="text-4xl font-black font-heading text-center mb-2 uppercase text-brand-text-primary">¿Quiénes somos?</h2>
+                    
                     <p className="text-center text-brand-text-secondary mb-12 max-w-2xl mx-auto">Somos una asociación de voluntarios comprometidos con la misión de apoyar y fortalecer la labor de los bomberos voluntarios, quienes día a día arriesgan sus vidas para proteger a la comunidad. A través de nuestras acciones, buscamos proporcionarles los recursos, capacitación y apoyo logístico que necesitan para cumplir con su valiosa labor de manera efectiva. Nuestro objetivo es crear un lazo de solidaridad y cooperación, generando un espacio en el que podamos contribuir con donaciones, voluntariado y actividades que fortalezcan tanto la infraestructura como la moral de estos valientes. Como parte de esta red de apoyo, trabajamos unidos con los bomberos para mejorar sus condiciones y asegurar que su dedicación al servicio de la comunidad continúe siendo un ejemplo de altruismo y valentía..</p>
+                    
+                    <div className="max-w-3xl mx-auto mb-12 aspect-video rounded-lg overflow-hidden shadow-xl border border-gray-200">
+                         <iframe 
+                            width="560" 
+                            height="315" 
+                            src="https://www.youtube.com/embed/eNjRriETLQs" 
+                            title="YouTube video player" 
+                            frameBorder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerPolicy="strict-origin-when-cross-origin"
+                            allowFullScreen
+                            className="w-full h-full"
+                        ></iframe>
+                    </div>
+
                     <div className="max-w-3xl mx-auto bg-white rounded-lg border border-gray-200 shadow-sm">
                        {associationGoals.map(goal => (
                            <AccordionItem 
