@@ -35,9 +35,10 @@ const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
                 .then((res) => res.json())
                 .then((data) => {
                     if (data && data.docs) {
-                        const productsWithPrices = data.docs.map((doc: any) => ({
+                        const priceList = [25, 20, 40, 12, 10, 5];
+                        const productsWithPrices = data.docs.map((doc: any, index: number) => ({
                             ...doc,
-                            price: Math.floor(Math.random() * (100 - 20 + 1)) + 20
+                            price: priceList[index] !== undefined ? priceList[index] : 25
                         }));
                         setProducts(productsWithPrices);
                     }
@@ -95,6 +96,9 @@ const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
                                     </div>
                                     <span className="text-brand-text-primary font-bold text-sm md:text-base capitalize leading-tight">{product.alt}</span>
                                     <span className="text-brand-red font-bold text-lg mt-2">S/ {product.price}.00</span>
+                                    <button className="mt-3 w-full bg-brand-red hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300 text-sm">
+                                        Comprar
+                                    </button>
                                 </div>
                             ))}
                         </div>
